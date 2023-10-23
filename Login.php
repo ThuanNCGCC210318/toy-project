@@ -16,7 +16,7 @@ if(isset($_POST['btnLogin'])){ //Kiểm tra nút bấm
         if ($numrow == 1){
             echo "Login successfully";
             $_SESSION["user_name"] = $row['Name'];
-            header("Location: Index.php");
+            header("Location: index.php");
             exit;
         }else{
             echo "Something is wrong with your info<br>";
