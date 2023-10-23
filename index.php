@@ -28,7 +28,7 @@
    		 		<div class="card">
      		 		<div class="card-body">
 					  	<img src ="./image/<?=$row['image']?>" width="300px">
-						<a href="detail.php?ID=<?=$row['ID']?>" class ="text-decoration">
+						<a href="Detail.php?ID=<?=$row['ID']?>" class ="text-decoration">
        						<h5 class="card-title"><?=$row['Name']?></h5></a>
 							<p class="card-text">$<?=$row['Seilling Price']?></p>
        		 				<a href="Cart.php?ID=<?=$row['ID']?>" class="btn btn-primary">Add to cart</a>
