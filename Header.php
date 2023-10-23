@@ -28,7 +28,7 @@
 				</button>
 			<div class="collapse navbar-collapse" id="navsup">
 					<div class="navbar-nav">
-						<a href="cart.php" class="nav-link bi bi-cart">Cart</a>
+						<a href="Cart.php" class="nav-link bi bi-cart">Cart</a>
 						<div class="dropdown">
 							<a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Management</a>
 							<div class="dropdown-menu">
@@ -44,11 +44,11 @@
 						if(isset($_SESSION['user_name'])):
 						?>
 							<a href="#" class="nav-link bi bi-file-person">Welcom, <?=$_SESSION['user_name']?></a>
-							<a href="logout.php" class="nav-link bi bi-box-arrow-right">Logout</a>
+							<a href="Logout.php" class="nav-link bi bi-box-arrow-right">Logout</a>
 						<?php
 						else:
 						?>
-							<a href="login.php" class="nav-link bi bi-box-arrow-right">Login</a>
+							<a href="Login.php" class="nav-link bi bi-box-arrow-right">Login</a>
 							<a href="register.php" class="nav-link">Register</a>
 						<?php
 						endif
