@@ -6,6 +6,7 @@ $blink = $c->ConnectToMySQL();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $product_id = $_POST['Pro_ID'];
+    $shop_id = $_POST['Shop_ID'];
     $product_name = $_POST['Pro_name'];
     $product_type = $_POST['Pro_type'];
     $original_price = $_POST['Ori_price'];
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $flag = move_uploaded_file($_FILES['Pro_image']['tmp_name'], $imgdir . $image_url);
 
     $sql = "UPDATE product SET 
+            `Shop_ID` = '$shop_id',
             `Name` = '$product_name',
             `Type` = '$product_type',
             `Original Price` = '$original_price',
@@ -48,6 +50,12 @@ $row = $result->fetch_assoc();
             <div class="col-sm-12">
                 <input type="text" name="Pro_ID" class="form-control" value="<?= $row['ID'] ?>" placeholder="Product ID" readonly>
             </div>
+        </div>
+        <div class="row mb-3">
+            <label for="" class="form-group">Shop ID: </label>
+                <div class="col-sm-12">
+                    <input type="text" name="Shop_ID" class="form-control" value="<?= $row['Shop_ID'] ?>" placeholder="Shop ID" >
+                </div>
         </div>
         <div class="row mb-3">
             <label for="" class="form-group">Product Name: </label>

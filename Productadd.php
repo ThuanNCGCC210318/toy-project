@@ -5,6 +5,7 @@
         $c = new Connect();
         $dbLink = $c->connectToPDO();
         $proID = $_POST['Pro_ID'];
+        $shopID = $_POST['Shop_ID'];
         $proName = $_POST['Pro_name'];
         $proType = $_POST['Pro_type'];
         $oriPrice = $_POST['Ori_price'];
@@ -15,10 +16,10 @@
         $imgdir = './image/'; 
         $flag = move_uploaded_file($_FILES['Pro_image']['tmp_name'], $imgdir.$img);
         if($flag){
-            $sql = "INSERT INTO `product`(`Name`, `Type`, `Original Price`, `Seilling Price`, `image`, `Description`, `Quantity`) VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO `product`(`Shop_ID`, `Name`, `Type`, `Original Price`, `Seilling Price`, `image`, `Description`, `Quantity`) VALUES (?,?,?,?,?,?,?,?)";
             $re = $dbLink->prepare($sql);
             $valueArray = [
-            $proName, $proType, $oriPrice, $seilPrice, $img, $proDesc, $proQua
+            $shopID, $proName, $proType, $oriPrice, $seilPrice, $img, $proDesc, $proQua
             ];
             $stmt = $re->execute($valueArray);
             if($stmt){
@@ -37,6 +38,13 @@
             <label for="" class="form-group">Product ID: </label>
                 <div class="col-sm-12">
                     <input type="text" name="Pro_ID" class="form-control" value="" placeholder="Product ID" >
+                </div>
+        </div>
+                <form class="form form-vertical" method="post" action="#" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <label for="" class="form-group">Shop ID: </label>
+                <div class="col-sm-12">
+                    <input type="text" name="Shop_ID" class="form-control" value="" placeholder="Shop ID" >
                 </div>
         </div>
         <div class="row mb-3">
@@ -80,7 +88,7 @@
         <div class="row mb-3">
                 <label for="" class="form-group">Quantity: </label>
                 <div class="col-sm-12">
-                    <input type="text" name="Pro_qua" class="form-control" value="" placeholder="Cat ID" >
+                    <input type="text" name="Pro_qua" class="form-control" value="" placeholder="Quantity" >
         </div>
         <div class="row mb-3">
                     <div class="col-2 mt-3 ms-auto row">
