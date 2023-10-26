@@ -6,10 +6,10 @@ class connect{
 	public $password;
 
 	public function __construct(){	
-	 $this->server = "td5l74lo6615qq42.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	";
-	 $this->usernames ="cnw77k1y9izjocjo";
-	 $this->password ="szexaj2dza0nmf2o";
-	 $this->dbname ="qjl4ew4812gjkad4";	
+	 $this->server = "uzb4o9e2oe257glt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+	 $this->usernames ="oi3li4ozl9ads35r";
+	 $this->password ="ccmjuaux7zxw6bih";
+	 $this->dbname ="yffx90h88680xbjx";	
 	}	
 	//1 option:1
 	
