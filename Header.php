@@ -49,7 +49,7 @@
 						else:
 						?>
 							<a href="Login.php" class="nav-link bi bi-box-arrow-right">Login</a>
-							<a href="register.php" class="nav-link">Register</a>
+							<a href="Register.php" class="nav-link">Register</a>
 						<?php
 						endif
 						?>
